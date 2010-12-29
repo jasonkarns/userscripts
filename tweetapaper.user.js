@@ -22,8 +22,7 @@
       $(element).find(".cornerControls").append(tweetLink.addClass('actionButton'));
     }
     else {
-      $(element).find(".secondaryControls").append('<span class="separator">•</span> ').append(tweetLink.addClass('actionLink'));
+      $(element).find(".secondaryControls").append('<span class="separator">&bull;</span> ').append(tweetLink.addClass('actionLink'));
     }
   });
 })();
-
