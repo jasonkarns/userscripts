@@ -6,17 +6,24 @@
 // ==/UserScript==
 
 
-$(".tableViewCell").each(function(index, element){
-  var link = $(element).find("a.tableViewCellTitleLink");
-  var t = {
-    text: link.text(),
-    url: link.attr("href")
-  };
-  var tweetLink = $('<a href="http://twitter.com/share?'+$.param(t)+'" target="_blank">Tweet</a>');
-  if($("a[href*=helvetapaper]").length){
-    $(element).find(".cornerControls").append(tweetLink.addClass('actionButton'));
+(function(){
+  function isHelvetapaper(){
+    return $("a[href*=helvetapaper]").length > 0;
   }
-  else {
-    $(element).find(".secondaryControls").append('<span class="separator">•</span> ').append(tweetLink.addClass('actionLink'));
-  }
-});
+
+  $(".tableViewCell").each(function(index, element){
+    var link = $(element).find("a.tableViewCellTitleLink");
+    var t = {
+      text: link.text(),
+      url: link.attr("href")
+    };
+    var tweetLink = $('<a href="http://twitter.com/share?'+$.param(t)+'" target="_blank">Tweet</a>');
+    if(isHelvetapaper()){
+      $(element).find(".cornerControls").append(tweetLink.addClass('actionButton'));
+    }
+    else {
+      $(element).find(".secondaryControls").append('<span class="separator">•</span> ').append(tweetLink.addClass('actionLink'));
+    }
+  });
+})();
+
