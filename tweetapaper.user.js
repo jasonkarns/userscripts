@@ -12,10 +12,11 @@ $(".tableViewCell").each(function(index, element){
     text: link.text(),
     url: link.attr("href")
   };
+  var tweetLink = $('<a href="http://twitter.com/share?'+$.param(t)+'" target="_blank">Tweet</a>');
   if($("a[href*=helvetapaper]").length){
-    $(element).find(".cornerControls").append('<a class="actionButton" href="http://twitter.com/share?'+$.param(t)+'" target="_blank">Tweet</a>');
+    $(element).find(".cornerControls").append(tweetLink.addClass('actionButton'));
   }
   else {
-    $(element).find(".secondaryControls").append('<span class="separator">•</span> <a class="actionLink" href="http://twitter.com/share?'+$.param(t)+'" target="_blank">Tweet</a>');
+    $(element).find(".secondaryControls").append('<span class="separator">•</span> ').append(tweetLink.addClass('actionLink'));
   }
 });
