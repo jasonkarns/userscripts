@@ -3,6 +3,11 @@
 // @namespace      http://jason.karns.name
 // @include        http://www.instapaper.com/*
 // @require        http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js
+// @description    Add a 'Tweet' action for sharing Instapaper items on Twitter
+// @author         Jason Karns
+// @version        1.0
+// @date           2010-12-29
+// @change         initial release
 // ==/UserScript==
 
 
