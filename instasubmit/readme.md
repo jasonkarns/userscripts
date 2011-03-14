@@ -1,5 +1,5 @@
 Instasubmit
-==================
+===========
 
 A userscript which auto-submits the Instapaper Add form when loaded via Google Reader's Send To Instapaper action.
 

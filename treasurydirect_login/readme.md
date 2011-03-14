@@ -1,5 +1,5 @@
 TreasuryDirect Login
-==================
+====================
 
 A userscript which makes the password field editable so that you can use the keyboard to log in.
 

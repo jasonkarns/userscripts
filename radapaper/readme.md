@@ -1,5 +1,5 @@
 Radapaper
-==================
+=========
 
 A userscript which adds 'Radbox' links to articles in your Instapaper queue.
 
