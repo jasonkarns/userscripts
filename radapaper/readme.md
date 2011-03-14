@@ -1,7 +1,7 @@
 Radapaper
 ==================
 
-A userscript which adds 'Tweet' links to articles in your Instapaper queue.
+A userscript which adds 'Radbox' links to articles in your Instapaper queue.
 
 ![preview](https://github.com/jasonkarns/userscripts/raw/master/radapaper/preview.png)
 
