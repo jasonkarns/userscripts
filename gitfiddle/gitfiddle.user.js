@@ -18,7 +18,7 @@ jQuery(function($){
     $("#repos .meta table tbody").append('<tr><td class="label">jsFiddle URL:</td><td><a class="gist-jsfiddle-link" href="'+fiddle_link()+'">'+fiddle_link()+'</td></tr>');
   }
   function fiddle_link(){
-    return "http://jsfiddle.net/gh/gist/jquery/1.6" + location.pathname;
+    return "http://jsfiddle.net/gh/gist/jquery/1.6/" + location.pathname.match(/^\/([0-9]+)\//)[1];
   }
   
   if(gist_is_a_fiddle()) insert_fiddle_link();
