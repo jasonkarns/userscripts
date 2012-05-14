@@ -3,16 +3,17 @@
 // @namespace      http://jason.karns.name
 // @include        https://gist.github.com/*
 // @description    When on a GitHub gist that looks like it contains Jasmine specs,  add a quick link to easily load the gist with tryjasmine.com.
-// @require        https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js
 // @author         Jason Karns
-// @version        0.1
+// @version        0.3
 // @date           2012-05-13
 // @change         initial release
 // ==/UserScript==
 
-jQuery(function($){
+var load,execute,loadAndExecute;load=function(a,b,c){var d;d=document.createElement("script"),d.setAttribute("src",a),b!=null&&d.addEventListener("load",b),c!=null&&d.addEventListener("error",c),document.body.appendChild(d);return d},execute=function(a){var b,c;typeof a=="function"?b="("+a+")();":b=a,c=document.createElement("script"),c.textContent=b,document.body.appendChild(c);return c},loadAndExecute=function(a,b){return load(a,function(){return execute(b)})};
+
+loadAndExecute("//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js", function() {
   function gist_is_a_jasmine_spec(){
-    var files = $(".file[id^='file_']");
+    var files = jQuery(".file[id^='file_']");
     var js_selector = "[id$='.js']",
         js_spec_selector = "[id$='_spec.js']",
         coffee_selector = "[id$='.coffee']",
@@ -29,7 +30,7 @@ jQuery(function($){
     return (sources > 0 && specs > 0);
   }
   function insert_tryjasmine_link(){
-    $("#repos .meta table tbody").append('<tr><td class="label">Try-Jasmine URL:</td><td><a class="gist-tryjasmine-link" href="'+tryjasmine_link()+'">'+tryjasmine_link()+'</td></tr>');
+    jQuery("#repos .meta table tbody").append('<tr><td class="label">Try-Jasmine URL:</td><td><a class="gist-tryjasmine-link" href="'+tryjasmine_link()+'">'+tryjasmine_link()+'</td></tr>');
   }
   function tryjasmine_link(){
     return "http://tryjasmine.com/?gist=" + location.pathname.match(/^\/([0-9]+)/)[1];
