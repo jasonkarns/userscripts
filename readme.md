@@ -1,7 +1,7 @@
 Userscripts
 ===========
 
-This is my collection of userscripts for Greasemonkey -- a Firefox extension. They haven't yet been tested on Chrome or Opera but they might work. I plan on making them portable soon.
+This is my collection of userscripts for Greasemonkey/Firefox. They haven't all been tested with Chrome but at least a few have.
 
 Feel free to [check them out at userscripts.org](http://userscripts.org/users/jasonkarns)
 
