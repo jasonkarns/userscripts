@@ -3,6 +3,8 @@ gitJasmine
 
 Adds a Try-Jasmine link to suspected Jasmine-spec gists. Lets you jump over to [tryjasmine.com](http://tryjasmine.com) to run the jasmine specs.
 
+![screenshot](//github.com/jasonkarns/userscripts/raw/master/gitjasmine/screenshot.png)
+
 Installation
 ------------
 
