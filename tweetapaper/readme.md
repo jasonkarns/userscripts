@@ -1,3 +1,5 @@
+#### Obsolete: This userscript is essentially obsolete now that Instapaper has Twitter share functionality built in.
+
 Tweetapaper
 ===========
 A userscript which adds 'Tweet' links to articles in your Instapaper queue.
