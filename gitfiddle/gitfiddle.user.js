@@ -10,16 +10,20 @@
 // @change         initial release
 // ==/UserScript==
 
-jQuery(function($){
-  function gist_is_a_fiddle(){
-    return $("#file_fiddle\\.manifest, .file[id^='file_fiddle']", $("#files")).size() > 1;
+var Gist = function(){};
+Gist.prototype.sounds_like_a_fiddle = function(){
+  return document.querySelector("#files .file[id^=file_fiddle]");
+};
+
+
+var Repo = function(){};
+
+
+function giddler(location){
+  if(location.match(new RegExp("^https://gist.github.com/"))){
+    return new Gist();
   }
-  function insert_fiddle_link(){
-    $("#repos .meta table tbody").append('<tr><td class="label">jsFiddle URL:</td><td><a class="gist-jsfiddle-link" href="'+fiddle_link()+'">'+fiddle_link()+'</td></tr>');
+  if(location.match(new RegExp("^https://github.com/.+"))){
+    return new Repo();
   }
-  function fiddle_link(){
-    return "http://jsfiddle.net/gh/gist/jquery/1.6/" + location.pathname.match(/^\/([0-9]+)\//)[1];
-  }
-  
-  if(gist_is_a_fiddle()) insert_fiddle_link();
-});
+}
