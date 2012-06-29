@@ -10,12 +10,16 @@
 // @change         initial release
 // ==/UserScript==
 
-var Gist = function(){
+var Gist = function(location){
   this.sounds_like_a_fiddle = function(){
     return document.querySelector("#files .file[id^=file_fiddle]");
   };
   this.insert_fiddle_link = function(){
-
+    var link = new LinksGist(location);
+    var tr = document.createElement('tr');
+    tr.appendChild(link.label);
+    tr.appendChild(link.link);
+    document.querySelector('#repos .meta table tbody').appendChild(tr);
   };
 };
 var Repo = function(){};

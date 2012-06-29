@@ -50,8 +50,10 @@ describe('Gist', function(){
   });
   describe('#insert_fiddle_link', function(){
     it('inserts fiddle link', function(){
-      new Gist().insert_fiddle_link();
-      //expect($('a.gist-fiddle-link')).toExist();
+      var meta = affix('#repos .meta table tbody');
+      new Gist({ pathname : '/606699/' }).insert_fiddle_link();
+      expect($(meta)).toContain('tr td.label');
+      expect($(meta)).toContain('tr td a.gist-fiddle-link');
     });
   });
 });
