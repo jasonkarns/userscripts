@@ -10,13 +10,30 @@
 // @change         initial release
 // ==/UserScript==
 
-var Gist = function(){};
-Gist.prototype.sounds_like_a_fiddle = function(){
-  return document.querySelector("#files .file[id^=file_fiddle]");
+var Gist = function(){
+  this.sounds_like_a_fiddle = function(){
+    return document.querySelector("#files .file[id^=file_fiddle]");
+  };
+  this.insert_fiddle_link = function(){
+
+  };
+};
+var Repo = function(){};
+
+var LinksGist = function(location){
+  var fiddle_base = 'http://jsfiddle.net/gh/gist/mootools/1.2/';
+  this.url = fiddle_base + location.pathname.match(/^\/([0-9]+)\//)[1] + '/';
+
+  var link = document.createElement("td");
+  link.innerHTML = '<a class="gist-fiddle-link" href="'+this.url+'">'+this.url+'</a>';
+  this.link = link;
+
+  var label = document.createElement("td");
+  label.className = 'label';
+  console.log(label);
+  this.label = label;
 };
 
-
-var Repo = function(){};
 
 
 function giddler(location){
