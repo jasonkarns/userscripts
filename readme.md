@@ -6,4 +6,5 @@ This is my collection of userscripts for Greasemonkey/Firefox and Google Chrome.
 - [Instasubmit](https://github.com/jasonkarns/userscripts/tree/master/instasubmit): auto-submits the Instapaper Add form when loaded via Google Reader's Send To Instapaper action
 - [Radapaper](https://github.com/jasonkarns/userscripts/tree/master/radapaper): adds 'Radbox' links to articles in your Instapaper queue
 - [TreasuryDirect Login](https://github.com/jasonkarns/userscripts/tree/master/treasurydirect_login): makes the password field editable so that you can use the keyboard to log in
+- [TryJasmine-widescreen](https://github.com/jasonkarns/userscripts/tree/master/tryjasmine-widescreen): make use of your widescreen on [TryJasmine.com](http://tryjasmine.com)
 - [Tweetapaper](https://github.com/jasonkarns/userscripts/tree/master/tweetapaper): adds 'Tweet' links to articles in your Instapaper queue
