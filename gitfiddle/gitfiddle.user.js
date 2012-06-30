@@ -1,13 +1,10 @@
 // ==UserScript==
 // @name           gitFiddle
 // @namespace      http://jason.karns.name
-// @include        https://gist.github.com/*
-// @require        https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js
+// @match          https://gist.github.com/*
 // @description    When on a GitHub gist that looks like it contains jsFiddle content, add a quick link to easily load the fiddle.
 // @author         Jason Karns
 // @version        0.1
-// @date           2011-07-01
-// @change         initial release
 // ==/UserScript==
 
 var Gist = function(location){
