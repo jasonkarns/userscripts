@@ -10,9 +10,11 @@
 var GitFiddle = function(location){
   GitFiddle.Gist = function(location){
     this.id = (location && location.pathname)? location.pathname.match(/^\/([0-9]+)\//)[1] : "";
+
     this.sounds_like_a_fiddle = function(){
       return document.querySelector("#files .file[id^=file_fiddle]");
     };
+
     this.insert_link = function(){
       var link = new GitFiddle.LinksGist(this.id);
       var tr = document.createElement('tr');
@@ -36,6 +38,13 @@ var GitFiddle = function(location){
     this.url = url;
     this.link = link;
     this.label = label;
+
+    this.build = function() {
+      var tr = document.createElement('tr');
+      tr.appendChild(this.label);
+      tr.appendChild(this.link);
+      return tr;
+    };
   };
   
   switch(location.host){

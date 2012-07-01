@@ -94,8 +94,24 @@ describe('LinksGist', function(){
   });
   describe('#label', function(){
     it('builds the label', function(){
-      //var subject = new GitFiddle.LinksGist(gist).label;
-      //expect($(subject)).toBe('td.label');
+      var subject = new GitFiddle.LinksGist(gist).label;
+      expect($(subject)).toBe('td.label');
+    });
+  });
+  describe('#build', function(){
+    it('builds a table row', function(){
+      var subject = new GitFiddle.LinksGist(gist);
+      expect($(subject.build())).toBe('tr');
+    });
+
+    it('contains the #label', function(){
+      var subject = new GitFiddle.LinksGist(gist);
+      expect($(subject.build())).toContain(subject.label);
+    });
+
+    it('contains the #link', function(){
+      var subject = new GitFiddle.LinksGist(gist);
+      expect($(subject.build())).toContain(subject.link);
     });
   });
 });
