@@ -23,19 +23,19 @@ var Repo = function(){};
 
 var LinksGist = function(location){
   var fiddle_base = 'http://jsfiddle.net/gh/gist/mootools/1.2/';
-  this.url = fiddle_base + location.pathname.match(/^\/([0-9]+)\//)[1] + '/';
+  var gist_slug = location.pathname.match(/^\/([0-9]+)\//)[1] + '/';
+  var url = fiddle_base + gist_slug;
 
   var link = document.createElement("td");
-  link.innerHTML = '<a class="gist-fiddle-link" href="'+this.url+'">'+this.url+'</a>';
-  this.link = link;
+  link.innerHTML = '<a class="gist-fiddle-link" href="'+ url +'">'+ url +'</a>';
 
   var label = document.createElement("td");
   label.className = 'label';
-  console.log(label);
+
+  this.url = url;
+  this.link = link;
   this.label = label;
 };
-
-
 
 function giddler(location){
   if(location.match(new RegExp("^https://gist.github.com/"))){
