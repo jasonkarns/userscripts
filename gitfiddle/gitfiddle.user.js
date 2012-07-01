@@ -12,7 +12,11 @@ var GitFiddle = function(location){
     this.id = (location && location.pathname)? location.pathname.match(/^\/([0-9]+)\//)[1] : "";
 
     this.sounds_like_a_fiddle = function(){
-      return document.querySelector("#files .file[id^=file_fiddle]");
+      var selector = ["#files .file[id^=file_fiddle\\.css]",
+                      "#files .file[id^=file_fiddle\\.html]",
+                      "#files .file[id^=file_fiddle\\.js]",
+                      "#files .file[id^=file_fiddle\\.manifest]"].join(",");
+      return document.querySelector(selector);
     };
 
     this.link_fiddle = function(){
