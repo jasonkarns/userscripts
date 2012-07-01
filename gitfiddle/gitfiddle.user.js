@@ -9,12 +9,12 @@
 
 var GitFiddle = function(location){
   GitFiddle.Gist = function(location){
-    this.location = location;
+    this.id = (location && location.pathname)? location.pathname.match(/^\/([0-9]+)\//)[1] : "";
     this.sounds_like_a_fiddle = function(){
       return document.querySelector("#files .file[id^=file_fiddle]");
     };
     this.insert_link = function(){
-      var link = new GitFiddle.LinksGist(this.location);
+      var link = new GitFiddle.LinksGist(this.id);
       var tr = document.createElement('tr');
       tr.appendChild(link.label);
       tr.appendChild(link.link);
@@ -23,10 +23,9 @@ var GitFiddle = function(location){
   };
   GitFiddle.Repo = function(){};
 
-  GitFiddle.LinksGist = function(location){
+  GitFiddle.LinksGist = function(gist_slug){
     var fiddle_base = 'http://jsfiddle.net/gh/gist/mootools/1.2/';
-    var gist_slug = location.pathname.match(/^\/([0-9]+)\//)[1] + '/';
-    var url = fiddle_base + gist_slug;
+    var url = fiddle_base + gist_slug + '/';
 
     var link = document.createElement("td");
     link.innerHTML = '<a class="gist-fiddle-link" href="'+ url +'">'+ url +'</a>';
