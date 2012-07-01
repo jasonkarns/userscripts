@@ -15,12 +15,9 @@ var GitFiddle = function(location){
       return document.querySelector("#files .file[id^=file_fiddle]");
     };
 
-    this.insert_link = function(){
-      var link = new GitFiddle.LinksGist(this.id);
-      var tr = document.createElement('tr');
-      tr.appendChild(link.label);
-      tr.appendChild(link.link);
-      document.querySelector('#repos .meta table tbody').appendChild(tr);
+    this.link_fiddle = function(){
+      var fiddle_link = new GitFiddle.LinksGist(this.id).build();
+      document.querySelector('#repos .meta table tbody').appendChild(fiddle_link);
     };
   };
   GitFiddle.Repo = function(){};
@@ -46,7 +43,7 @@ var GitFiddle = function(location){
       return tr;
     };
   };
-  
+
   switch(location.host){
     case "gist.github.com":
       return new GitFiddle.Gist(location);

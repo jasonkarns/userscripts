@@ -60,10 +60,16 @@ describe('Gist', function(){
   describe('#insert_link', function(){
     it('inserts link', function(){
       var meta = affix('#repos .meta table tbody');
-      
-      new GitFiddle.Gist({ pathname : '/606699/' }).insert_link();
-      expect($(meta)).toContain('tr td.label');
-      expect($(meta)).toContain('tr td a.gist-fiddle-link');
+
+      var gist_linker = jasmine.createSpyObj('LinksGist', ['build']);
+      gist_linker.build.andReturn($('<tr class="test">')[0]);
+      spyOn(GitFiddle,'LinksGist').andReturn(gist_linker);
+
+      new GitFiddle.Gist({ pathname : '/606699/' }).link_fiddle();
+
+      expect(GitFiddle.LinksGist).toHaveBeenCalledWith('606699');
+      expect(gist_linker.build).toHaveBeenCalled();
+      expect($(meta)).toContain('tr.test');
     });
   });
 });
