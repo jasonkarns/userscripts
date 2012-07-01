@@ -38,10 +38,10 @@ var GitFiddle = function(location){
     this.label = label;
   };
   
-  switch(true){
-    case new RegExp("^https://gist.github.com/").test(location):
+  switch(location.host){
+    case "gist.github.com":
       return new GitFiddle.Gist(location);
-    case new RegExp("^https://github.com/.+").test(location):
+    case "github.com":
       return new GitFiddle.Repo(location);
   }
 };

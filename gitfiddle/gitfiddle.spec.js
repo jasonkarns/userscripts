@@ -8,11 +8,11 @@ beforeEach(function() {
 
 describe('GitFiddle',function(){
   it('returns Gist if location is gist', function(){
-    var location = "https://gist.github.com/606699/";
+    var location = {host: "gist.github.com"};
     expect(GitFiddle(location)).toDeriveFrom(GitFiddle.Gist);
   });
   it('returns Repo if location is repo', function(){
-    var location = "https://github.com/jasonkarns/";
+    var location = {host: "github.com"};
     expect(GitFiddle(location)).toDeriveFrom(GitFiddle.Repo);
   });
 });
