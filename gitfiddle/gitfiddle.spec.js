@@ -60,6 +60,7 @@ describe('Gist', function(){
   describe('#insert_link', function(){
     it('inserts link', function(){
       var meta = affix('#repos .meta table tbody');
+      
       new GitFiddle.Gist({ pathname : '/606699/' }).insert_link();
       expect($(meta)).toContain('tr td.label');
       expect($(meta)).toContain('tr td a.gist-fiddle-link');
@@ -68,32 +69,32 @@ describe('Gist', function(){
 });
 
 describe('LinksGist', function(){
+  var gist = {id: '606699'};
+
   describe('#url', function(){
     it('is built from the gist id', function(){
-      var gist_id = '606699';
       var fiddle_url = 'http://jsfiddle.net/gh/gist/mootools/1.2/606699/';
-      expect(new GitFiddle.LinksGist(gist_id).url).toBe(fiddle_url);
+      expect(new GitFiddle.LinksGist(gist).url).toBe(fiddle_url);
     });
   });
   describe('#link', function(){
-    var gist_id = '606699';
     var fiddle_url = 'http://jsfiddle.net/gh/gist/mootools/1.2/606699/';
     it('builds the link', function(){
-      var subject = new GitFiddle.LinksGist(gist_id).link;
+      var subject = new GitFiddle.LinksGist(gist).link;
       //expect($(subject)).toBe('td a.gist-fiddle-link');
     });
     it('sets the href', function(){
-      var subject = new GitFiddle.LinksGist(gist_id).link;
+      var subject = new GitFiddle.LinksGist(gist).link;
       //expect($(subject)).toHaveAttr('href', fiddle_url);
     });
     it('sets the text content', function(){
-      var subject = new GitFiddle.LinksGist(gist_id).link;
+      var subject = new GitFiddle.LinksGist(gist).link;
       expect($(subject)).toHaveText(fiddle_url);
     });
   });
   describe('#label', function(){
     it('builds the label', function(){
-      //var subject = new GitFiddle.LinksGist(gist_id).label;
+      //var subject = new GitFiddle.LinksGist(gist).label;
       //expect($(subject)).toBe('td.label');
     });
   });

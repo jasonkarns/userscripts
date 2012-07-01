@@ -23,9 +23,9 @@ var GitFiddle = function(location){
   };
   GitFiddle.Repo = function(){};
 
-  GitFiddle.LinksGist = function(gist_slug){
+  GitFiddle.LinksGist = function(gist){
     var fiddle_base = 'http://jsfiddle.net/gh/gist/mootools/1.2/';
-    var url = fiddle_base + gist_slug + '/';
+    var url = fiddle_base + gist.id + '/';
 
     var link = document.createElement("td");
     link.innerHTML = '<a class="gist-fiddle-link" href="'+ url +'">'+ url +'</a>';
