@@ -91,7 +91,8 @@ describe('Gist', function(){
 
   describe('#id', function(){
     it('parses the gist id from the location', function(){
-      expect(new GitFiddle.Gist({ pathname : '/606699/' }).id).toBe('606699');
+      var location = { pathname : '/606699/' };
+      expect(new GitFiddle.Gist(location).id).toBe('606699');
     });
     it('handles sha hash', function(){
       var location = { pathname : '/606699/35b6e9d1037cb33da0943ceccf5ddde6bd362263/' };
@@ -126,42 +127,46 @@ describe('LinksGist', function(){
   });
 
   describe('#link', function(){
+    beforeEach(function(){
+      subject = new GitFiddle.LinksGist(gist).link;
+    });
+
     it('is an anchor', function(){
-      var subject = new GitFiddle.LinksGist(gist).link;
       expect($(subject)).toBe('a.gist-fiddle-link');
     });
     it('has the correct href', function(){
-      var subject = new GitFiddle.LinksGist(gist).link;
       expect($(subject)).toHaveAttr('href', fiddle_url);
     });
     it('has the url as text content', function(){
-      var subject = new GitFiddle.LinksGist(gist).link;
       expect($(subject)).toHaveText(fiddle_url);
     });
   });
 
   describe('#label', function(){
+    beforeEach(function(){
+      subject = new GitFiddle.LinksGist(gist).label;
+    });
+
     it('is a table cell', function(){
-      var subject = new GitFiddle.LinksGist(gist).label;
       expect($(subject)).toBe('td.label');
     });
     it('says Run Jasmine Specs', function(){
-      var subject = new GitFiddle.LinksGist(gist).label;
       expect($(subject)).toHaveText('Run Jasmine Specs');
     });
   });
 
   describe('#build', function(){
+    beforeEach(function(){
+      subject = new GitFiddle.LinksGist(gist);
+    });
+
     it('builds a table row', function(){
-      var subject = new GitFiddle.LinksGist(gist);
       expect($(subject.build())).toBe('tr');
     });
     it('contains the #label', function(){
-      var subject = new GitFiddle.LinksGist(gist);
       expect($(subject.build())).toContain(subject.label);
     });
     it('contains the #link', function(){
-      var subject = new GitFiddle.LinksGist(gist);
       expect($(subject.build())).toContain(subject.link);
     });
   });
