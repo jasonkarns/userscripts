@@ -19,7 +19,7 @@ var GitFiddle = function(location){
       return document.querySelector(selector);
     };
 
-    this.link_fiddle = function(){
+    this.insert_link = function(){
       var fiddle_link = new GitFiddle.LinksGist(this.id).build();
       document.querySelector('#repos .meta table tbody').appendChild(fiddle_link);
     };

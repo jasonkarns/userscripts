@@ -49,7 +49,7 @@ describe('Gist', function(){
         file.attr('id', 'file_fiddle.fake');
         expect(new GitFiddle.Gist().sounds_like_a_fiddle()).toBeFalsy();
       });
-      it('if fiddle.fake is found', function(){
+      it('if fiddle is found', function(){
         file.attr('id', 'file_fiddle');
         expect(new GitFiddle.Gist().sounds_like_a_fiddle()).toBeFalsy();
       });
@@ -72,7 +72,7 @@ describe('Gist', function(){
       gist_linker.build.andReturn($('<tr class="test">')[0]);
       spyOn(GitFiddle,'LinksGist').andReturn(gist_linker);
 
-      new GitFiddle.Gist({ pathname : '/606699/' }).link_fiddle();
+      new GitFiddle.Gist({ pathname : '/606699/' }).insert_link();
 
       expect(GitFiddle.LinksGist).toHaveBeenCalledWith('606699');
       expect(gist_linker.build).toHaveBeenCalled();
