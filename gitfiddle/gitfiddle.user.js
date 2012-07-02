@@ -27,23 +27,32 @@ var GitFiddle = function(location){
   GitFiddle.Repo = function(){};
 
   GitFiddle.LinksGist = function(gist){
-    var fiddle_base = 'http://jsfiddle.net/gh/gist/mootools/1.2/';
-    var url = fiddle_base + gist.id + '/';
+    this.url = (function(gist_id){
+      var fiddle_base = 'http://jsfiddle.net/gh/gist/mootools/1.2/';
+      return fiddle_base + gist_id + '/';
+    })(gist.id);
 
-    var link = document.createElement("td");
-    link.innerHTML = '<a class="gist-fiddle-link" href="'+ url +'">'+ url +'</a>';
+    this.link = (function(url){
+      var link = document.createElement('a');
+      link.className = 'gist-fiddle-link';
+      link.href = url;
+      link.textContent = url;
+      return link;
+    })(this.url);
 
-    var label = document.createElement("td");
-    label.className = 'label';
-
-    this.url = url;
-    this.link = link;
-    this.label = label;
+    this.label = (function(){
+      var label = document.createElement("td");
+      label.textContent = 'Run Jasmine Specs';
+      label.className = 'label';
+      return label;
+    })();
 
     this.build = function() {
       var tr = document.createElement('tr');
       tr.appendChild(this.label);
-      tr.appendChild(this.link);
+      var td = document.createElement('td');
+      td.appendChild(this.link);
+      tr.appendChild(td);
       return tr;
     };
   };

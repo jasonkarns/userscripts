@@ -92,23 +92,27 @@ describe('LinksGist', function(){
   });
   describe('#link', function(){
     var fiddle_url = 'http://jsfiddle.net/gh/gist/mootools/1.2/606699/';
-    it('builds the link', function(){
+    it('is an anchor', function(){
       var subject = new GitFiddle.LinksGist(gist).link;
-      //expect($(subject)).toBe('td a.gist-fiddle-link');
+      expect($(subject)).toBe('a.gist-fiddle-link');
     });
-    it('sets the href', function(){
+    it('has the correct href', function(){
       var subject = new GitFiddle.LinksGist(gist).link;
-      //expect($(subject)).toHaveAttr('href', fiddle_url);
+      expect($(subject)).toHaveAttr('href', fiddle_url);
     });
-    it('sets the text content', function(){
+    it('has the url as text content', function(){
       var subject = new GitFiddle.LinksGist(gist).link;
       expect($(subject)).toHaveText(fiddle_url);
     });
   });
   describe('#label', function(){
-    it('builds the label', function(){
+    it('is a table cell', function(){
       var subject = new GitFiddle.LinksGist(gist).label;
       expect($(subject)).toBe('td.label');
+    });
+    it('says Run Jasmine Specs', function(){
+      var subject = new GitFiddle.LinksGist(gist).label;
+      expect($(subject)).toHaveText('Run Jasmine Specs');
     });
   });
   describe('#build', function(){
