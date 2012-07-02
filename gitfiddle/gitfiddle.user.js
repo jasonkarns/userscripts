@@ -16,12 +16,21 @@ var GitFiddle = function(location){
     case "github.com":
       git = new GitFiddle.Repo(location);
       break;
+    default:
+      git = new GitFiddle.Git();
   }
-  
-  if(git && git.sounds_like_a_fiddle && git.sounds_like_a_fiddle()){
+
+  if(git.sounds_like_a_fiddle && git.sounds_like_a_fiddle()){
     git.insert_link();
   }
 };
+
+GitFiddle.Git = function(){};
+GitFiddle.Git.prototype.sounds_like_a_fiddle = function(){
+  return false;
+};
+
+GitFiddle.Repo = Object.create(GitFiddle.Git);
 
 GitFiddle.Gist = function(location){
   this.id = (location && location.pathname)? location.pathname.match(/^\/([0-9]+)\//)[1] : "";
@@ -37,8 +46,6 @@ GitFiddle.Gist.prototype.insert_link = function(){
   var fiddle_link = new GitFiddle.LinksGist(this.id).build();
   document.querySelector('#repos .meta table tbody').appendChild(fiddle_link);
 };
-
-GitFiddle.Repo = function(){};
 
 GitFiddle.LinksGist = function(gist){
   this.url = (function(gist_id){
