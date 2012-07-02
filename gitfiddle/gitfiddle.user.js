@@ -8,29 +8,34 @@
 // ==/UserScript==
 
 var GitFiddle = function(location){
+  var git;
   switch(location.host){
     case "gist.github.com":
-      return new GitFiddle.Gist(location);
+      git = new GitFiddle.Gist(location);
+      break;
     case "github.com":
-      return new GitFiddle.Repo(location);
+      git = new GitFiddle.Repo(location);
+      break;
+  }
+  
+  if(git && git.sounds_like_a_fiddle && git.sounds_like_a_fiddle()){
+    git.insert_link();
   }
 };
 
 GitFiddle.Gist = function(location){
   this.id = (location && location.pathname)? location.pathname.match(/^\/([0-9]+)\//)[1] : "";
-
-  this.sounds_like_a_fiddle = function(){
-    var selector = ["#files .file[id^=file_fiddle\\.css]",
-                    "#files .file[id^=file_fiddle\\.html]",
-                    "#files .file[id^=file_fiddle\\.js]",
-                    "#files .file[id^=file_fiddle\\.manifest]"].join(",");
-    return document.querySelector(selector);
-  };
-
-  this.insert_link = function(){
-    var fiddle_link = new GitFiddle.LinksGist(this.id).build();
-    document.querySelector('#repos .meta table tbody').appendChild(fiddle_link);
-  };
+};
+GitFiddle.Gist.prototype.sounds_like_a_fiddle = function(){
+  var selector = ["#files .file[id^=file_fiddle\\.css]",
+                  "#files .file[id^=file_fiddle\\.html]",
+                  "#files .file[id^=file_fiddle\\.js]",
+                  "#files .file[id^=file_fiddle\\.manifest]"].join(",");
+  return document.querySelector(selector);
+};
+GitFiddle.Gist.prototype.insert_link = function(){
+  var fiddle_link = new GitFiddle.LinksGist(this.id).build();
+  document.querySelector('#repos .meta table tbody').appendChild(fiddle_link);
 };
 
 GitFiddle.Repo = function(){};
@@ -55,13 +60,12 @@ GitFiddle.LinksGist = function(gist){
     label.className = 'label';
     return label;
   })();
-
-  this.build = function() {
-    var tr = document.createElement('tr');
-    tr.appendChild(this.label);
-    var td = document.createElement('td');
-    td.appendChild(this.link);
-    tr.appendChild(td);
-    return tr;
-  };
+};
+GitFiddle.LinksGist.prototype.build = function() {
+  var tr = document.createElement('tr');
+  tr.appendChild(this.label);
+  var td = document.createElement('td');
+  td.appendChild(this.link);
+  tr.appendChild(td);
+  return tr;
 };
