@@ -1,19 +1,26 @@
-beforeEach(function() {
-  this.addMatchers({
-    toDeriveFrom: function(expected) {
-      return this.actual instanceof expected;
-    }
-  });
-});
-
 describe('GitFiddle',function(){
-  it('returns Gist if location is gist', function(){
-    var location = {host: "gist.github.com"};
-    expect(GitFiddle(location)).toDeriveFrom(GitFiddle.Gist);
+  context('when location is a gist', function(){
+    it('creates a Gist link', function(){
+      var location = {host: "gist.github.com"};
+      spyOn(GitFiddle, 'Gist');
+      spyOn(GitFiddle, 'Repo');
+
+      GitFiddle(location);
+      expect(GitFiddle.Gist).toHaveBeenCalled();
+      expect(GitFiddle.Repo).not.toHaveBeenCalled();
+    });
+
   });
-  it('returns Repo if location is repo', function(){
-    var location = {host: "github.com"};
-    expect(GitFiddle(location)).toDeriveFrom(GitFiddle.Repo);
+  context('when location is a repo', function(){
+    it('creates a Repo link', function(){
+      var location = {host: "github.com"};
+      spyOn(GitFiddle, 'Gist');
+      spyOn(GitFiddle, 'Repo');
+
+      GitFiddle(location);
+      expect(GitFiddle.Repo).toHaveBeenCalled();
+      expect(GitFiddle.Gist).not.toHaveBeenCalled();
+    });
   });
 });
 
