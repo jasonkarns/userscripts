@@ -54,7 +54,8 @@ describe('Gist', function(){
     var sounds_like_a_fiddle = function(){
       return new GitFiddle.Gist().sounds_like_a_fiddle();
     };
-    describe('is true if', function(){
+
+    context('is true when', function(){
       it('fiddle.css is found', function(){
         affix_file('file_fiddle.css');
         expect(sounds_like_a_fiddle()).toBeTruthy();
@@ -72,7 +73,8 @@ describe('Gist', function(){
         expect(sounds_like_a_fiddle()).toBeTruthy();
       });
     });
-    describe('is false if', function(){
+
+    context('is false when', function(){
       it('fiddle.(html|css|js|manifest) is not found', function(){
         expect(sounds_like_a_fiddle()).toBeFalsy();
       });
@@ -86,6 +88,7 @@ describe('Gist', function(){
       });
     });
   });
+
   describe('#id', function(){
     it('parses the gist id from the location', function(){
       expect(new GitFiddle.Gist({ pathname : '/606699/' }).id).toBe('606699');
@@ -114,15 +117,15 @@ describe('Gist', function(){
 
 describe('LinksGist', function(){
   var gist = {id: '606699'};
+  var fiddle_url = 'http://jsfiddle.net/gh/gist/mootools/1.2/606699/';
 
   describe('#url', function(){
     it('is built from the gist id', function(){
-      var fiddle_url = 'http://jsfiddle.net/gh/gist/mootools/1.2/606699/';
       expect(new GitFiddle.LinksGist(gist).url).toBe(fiddle_url);
     });
   });
+
   describe('#link', function(){
-    var fiddle_url = 'http://jsfiddle.net/gh/gist/mootools/1.2/606699/';
     it('is an anchor', function(){
       var subject = new GitFiddle.LinksGist(gist).link;
       expect($(subject)).toBe('a.gist-fiddle-link');
@@ -136,6 +139,7 @@ describe('LinksGist', function(){
       expect($(subject)).toHaveText(fiddle_url);
     });
   });
+
   describe('#label', function(){
     it('is a table cell', function(){
       var subject = new GitFiddle.LinksGist(gist).label;
@@ -146,17 +150,16 @@ describe('LinksGist', function(){
       expect($(subject)).toHaveText('Run Jasmine Specs');
     });
   });
+
   describe('#build', function(){
     it('builds a table row', function(){
       var subject = new GitFiddle.LinksGist(gist);
       expect($(subject.build())).toBe('tr');
     });
-
     it('contains the #label', function(){
       var subject = new GitFiddle.LinksGist(gist);
       expect($(subject.build())).toContain(subject.label);
     });
-
     it('contains the #link', function(){
       var subject = new GitFiddle.LinksGist(gist);
       expect($(subject.build())).toContain(subject.link);
