@@ -73,16 +73,15 @@ describe('Gist', function(){
         expect(sounds_like_a_fiddle()).toBeTruthy();
       });
     });
-
     context('is false when', function(){
       it('fiddle.(html|css|js|manifest) is not found', function(){
         expect(sounds_like_a_fiddle()).toBeFalsy();
       });
-      it('if fiddle.fake is found', function(){
-        affix_file('file_fiddle.fake');
+      it('fiddle.fake is found', function(){
+       affix_file('file_fiddle.fake');
         expect(sounds_like_a_fiddle()).toBeFalsy();
       });
-      it('if fiddle is found', function(){
+      it('fiddle is found', function(){
         affix_file('file_fiddle');
         expect(sounds_like_a_fiddle()).toBeFalsy();
       });
@@ -94,7 +93,7 @@ describe('Gist', function(){
       var location = { pathname : '/606699/' };
       expect(new GitFiddle.Gist(location).id).toBe('606699');
     });
-    it('handles sha hash', function(){
+    it('ignores sha hash', function(){
       var location = { pathname : '/606699/35b6e9d1037cb33da0943ceccf5ddde6bd362263/' };
       expect(new GitFiddle.Gist(location).id).toBe('606699');
     });
