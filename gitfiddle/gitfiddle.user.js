@@ -4,7 +4,7 @@
 // @match          https://gist.github.com/*
 // @description    When on a GitHub gist that looks like it contains jsFiddle content, add a quick link to easily load the fiddle.
 // @author         Jason Karns
-// @version        0.1
+// @version        1.0
 // ==/UserScript==
 
 var GitFiddle = function(location){
@@ -33,7 +33,9 @@ GitFiddle.Git.prototype.sounds_like_a_fiddle = function(){
 GitFiddle.Repo = Object.create(GitFiddle.Git);
 
 GitFiddle.Gist = function(location){
-  this.id = (location && location.pathname)? location.pathname.match(/^\/([0-9]+)\//)[1] : "";
+  var pathname = (location && location.pathname) || "";
+  var matches = /^\/([0-9]+)\//.exec(pathname) || [];
+  this.id = matches[1];
 };
 GitFiddle.Gist.prototype.sounds_like_a_fiddle = function(){
   var selector = ["#files .file[id^=file_fiddle\\.css]",

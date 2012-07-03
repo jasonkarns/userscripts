@@ -90,12 +90,16 @@ describe('Gist', function(){
 
   describe('#id', function(){
     it('parses the gist id from the location', function(){
-      var location = { pathname : '/606699/' };
+      var location = { pathname: '/606699/' };
       expect(new GitFiddle.Gist(location).id).toBe('606699');
     });
     it('ignores sha hash', function(){
-      var location = { pathname : '/606699/35b6e9d1037cb33da0943ceccf5ddde6bd362263/' };
+      var location = { pathname: '/606699/35b6e9d1037cb33da0943ceccf5ddde6bd362263/' };
       expect(new GitFiddle.Gist(location).id).toBe('606699');
+    });
+    it('should not throw TypeError', function(){
+      var location = { pathname: '/some/non-gist/url'};
+      expect(function(){var gist_id = new GitFiddle.Gist(location).id;}).not.toThrow(new TypeError("Cannot read property '1' of null"));
     });
   });
   describe('#insert_link', function(){
