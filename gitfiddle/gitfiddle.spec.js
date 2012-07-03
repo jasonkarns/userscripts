@@ -158,7 +158,7 @@ describe('LinksGist', function(){
     it('is a table cell', function(){
       expect($(subject)).toBe('td.label');
     });
-    it('says Run Jasmine Specs', function(){
+    it('says Run Fiddle', function(){
       expect($(subject)).toHaveText('Run Jasmine Specs');
     });
   });

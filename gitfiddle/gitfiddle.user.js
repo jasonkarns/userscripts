@@ -65,7 +65,7 @@ GitFiddle.LinksGist = function(gist){
 
   this.label = (function(){
     var label = document.createElement("td");
-    label.textContent = 'Run Jasmine Specs';
+    label.textContent = 'Run Fiddle';
     label.className = 'label';
     return label;
   })();
