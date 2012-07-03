@@ -45,7 +45,7 @@ GitFiddle.Gist.prototype.sounds_like_a_fiddle = function(){
   return document.querySelector(selector);
 };
 GitFiddle.Gist.prototype.insert_link = function(){
-  var fiddle_link = new GitFiddle.LinksGist(this.id).build();
+  var fiddle_link = new GitFiddle.LinksGist(this).build();
   document.querySelector('#repos .meta table tbody').appendChild(fiddle_link);
 };
 

@@ -110,9 +110,10 @@ describe('Gist', function(){
       gist_linker.build.andReturn($('<tr class="test">')[0]);
       spyOn(GitFiddle,'LinksGist').andReturn(gist_linker);
 
-      new GitFiddle.Gist({ pathname : '/606699/' }).insert_link();
+      var gist = new GitFiddle.Gist({ pathname : '/606699/' });
+      gist.insert_link();
 
-      expect(GitFiddle.LinksGist).toHaveBeenCalledWith('606699');
+      expect(GitFiddle.LinksGist).toHaveBeenCalledWith(gist);
       expect(gist_linker.build).toHaveBeenCalled();
       expect($(meta)).toContain('tr.test');
     });
