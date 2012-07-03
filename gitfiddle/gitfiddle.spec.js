@@ -90,6 +90,10 @@ describe('Gist', function(){
 
   describe('#id', function(){
     it('parses the gist id from the location', function(){
+      var location = { pathname: '/606699' };
+      expect(new GitFiddle.Gist(location).id).toBe('606699');
+    });
+    it('handles trailing slashes', function(){
       var location = { pathname: '/606699/' };
       expect(new GitFiddle.Gist(location).id).toBe('606699');
     });

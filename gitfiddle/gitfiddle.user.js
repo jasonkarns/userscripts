@@ -34,7 +34,7 @@ GitFiddle.Repo = Object.create(GitFiddle.Git);
 
 GitFiddle.Gist = function(location){
   var pathname = (location && location.pathname) || "";
-  var matches = /^\/([0-9]+)\//.exec(pathname) || [];
+  var matches = /^\/([0-9]+)\/?/.exec(pathname) || [];
   this.id = matches[1];
 };
 GitFiddle.Gist.prototype.sounds_like_a_fiddle = function(){
