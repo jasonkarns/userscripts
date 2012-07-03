@@ -76,3 +76,5 @@ GitFiddle.LinksGist.prototype.build = function() {
   tr.appendChild(td);
   return tr;
 };
+
+GitFiddle(location);
