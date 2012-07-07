@@ -1,6 +1,6 @@
 Userscripts
 ===========
-Userscripts for Firefox (with Greasemonkey) and Google Chrome. They are also [available at userscripts.org](http://userscripts.org/users/jasonkarns)
+Userscripts for Firefox (with Greasemonkey) and Chrome. They are also [available at userscripts.org](http://userscripts.org/users/jasonkarns)
 
 - [GitHub-Diff-Whitespace](https://github.com/jasonkarns/userscripts/tree/master/github-diff-whitespace): adds a button to GitHub diff views (commits, pull requests) to toggle whitespace-significance for the diff.
 - [gitJasmine](https://github.com/jasonkarns/userscripts/tree/master/gitjasmine): adds a 'Try-Jasmine' link to gists that look like they include Jasmine specs. Supports both JavaScript and CoffeeScript.
