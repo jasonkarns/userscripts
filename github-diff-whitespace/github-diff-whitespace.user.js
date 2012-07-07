@@ -40,7 +40,7 @@
     var code = document.createElement( 'code' ); // this is a hack to fix some weird height issues with their CSS
 
     var a = document.createElement( 'a' )
-    a.className = button_group.querySelector( 'a' ).className;
+    a.className = button_group.querySelector( 'a' ).className + ' ' + toggler_classname;
     a.href = '?' + querystring;
     a.title = 'Toggle Whitespace';
     a.textContent = ' \u2423 ';
@@ -54,7 +54,7 @@
 
   var addWhitespaceToggleButtons = function( querystring ){
     Array.prototype.forEach.call(
-      document.querySelectorAll( '.diff-view .actions .button-group' ),
+      document.querySelectorAll( button_group_selector ),
       function( button_group, index, button_groups ){
         addWhitespaceToggleButton( button_group, querystring );
       }
@@ -63,6 +63,8 @@
 
 
 
+  var button_group_selector = '.diff-view .actions .button-group';
+  var toggler_classname = 'toggle-whitespace';
   var params = querystringToObject( querystring );
   var whitespace = Boolean(params.w);
   querystring = objectToQueryString( toggleW( params, whitespace ) );
