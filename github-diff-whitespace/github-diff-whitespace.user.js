@@ -36,20 +36,24 @@
     return params;
   };
 
+  var addWhitespaceToggleButton = function( button_group, querystring ){
+    var a = document.createElement( 'a' )
+    a.className = button_group.querySelector( 'a' ).className;
+    a.href = '?' + querystring;
+    a.title = 'Toggle Whitespace';
+    a.textContent = 'Toggle Whitespace';
+
+    var li = document.createElement( 'li' )
+    li.appendChild( a );
+
+    button_group.insertBefore( li, button_group.firstChild );
+  }
+
   var addWhitespaceToggleButtons = function( querystring ){
     Array.prototype.forEach.call(
       document.querySelectorAll( '.diff-view .actions .button-group' ),
       function( button_group, index, button_groups ){
-        var a = document.createElement( 'a' )
-        a.className = button_group.querySelector( 'a' ).className;
-        a.href = '?' + querystring;
-        a.title = 'Toggle Whitespace';
-        a.textContent = 'Toggle Whitespace';
-
-        var li = document.createElement( 'li' )
-        li.appendChild( a );
-
-        button_group.insertBefore( li, button_group.firstChild );
+        addWhitespaceToggleButton( button_group, querystring );
       }
     );
   };
