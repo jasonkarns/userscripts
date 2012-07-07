@@ -61,6 +61,15 @@
     );
   };
 
+  var invertButtonGradients = function(){
+    var sheet = document.createElement('style')
+    var selector = button_group_selector + ' .' + toggler_classname;
+    sheet.innerHTML = selector + "{ background: -moz-linear-gradient(#EAEAEA,#FAFAFA);\
+                                    background: -webkit-linear-gradient(#EAEAEA,#FAFAFA);}" +
+               selector + ":hover { background: -moz-linear-gradient(#3072B3, #599BDC);\
+                                    background: -webkit-linear-gradient(#3072B3,#599BDC);}";
+    document.body.appendChild(sheet);
+  };
 
 
   var button_group_selector = '.diff-view .actions .button-group';
@@ -69,5 +78,7 @@
   var whitespace = Boolean(params.w);
   querystring = objectToQueryString( toggleW( params, whitespace ) );
   addWhitespaceToggleButtons( querystring );
+
+  if(whitespace) { invertButtonGradients(); }
 
 })( location.search );
