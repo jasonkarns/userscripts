@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        GitHub-whitespace
+// @name        GitHub-diff-whitespace
 // @namespace   http://jason.karns.name
 // @match       https://github.com/*/commit/*
 // @match       https://github.com/*/pull/*
