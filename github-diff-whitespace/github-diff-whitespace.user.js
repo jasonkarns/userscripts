@@ -41,7 +41,7 @@
     a.className = button_group.querySelector( 'a' ).className;
     a.href = '?' + querystring;
     a.title = 'Toggle Whitespace';
-    a.textContent = '\u2423 \u2422';
+    a.textContent = ' \u2423 ';
 
     var li = document.createElement( 'li' )
     li.appendChild( a );
