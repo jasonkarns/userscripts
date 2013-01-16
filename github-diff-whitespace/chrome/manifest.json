@@ -1,0 +1,19 @@
+{
+  "name": "GitHub-Diff-Whitespace",
+  "version": "1.1",
+  "description": "",
+  "manifest_version": 2,
+  "content_scripts": [ {
+    "exclude_globs": [  ],
+    "exclude_matches": [  ],
+    "include_globs": [  ],
+    "js": [ "script.js" ],
+    "matches": [
+      "https://github.com/*/commit/*",
+      "https://github.com/*/compare/*",
+      "https://github.com/*/pull/*"
+    ],
+    "run_at": "document_idle"
+  } ]
+}
+
