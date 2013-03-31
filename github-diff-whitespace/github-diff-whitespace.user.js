@@ -39,18 +39,16 @@
 
   var addWhitespaceToggleButton = function( button_group, querystring ){
     var code = document.createElement( 'code' ); // this is a hack to fix some weird height issues with their CSS
+    code.textContent = ' ';
 
-    var a = document.createElement( 'a' )
+    var a = document.createElement( 'a' );
     a.className = button_group.querySelector( 'a' ).className + ' ' + toggler_classname;
     a.href = '?' + querystring;
     a.title = 'Toggle Whitespace';
-    a.textContent = ' \u2423 ';
+    a.textContent = ' \u2423';
     a.appendChild(code);
 
-    var li = document.createElement( 'li' )
-    li.appendChild( a );
-
-    button_group.insertBefore( li, button_group.firstChild );
+    button_group.insertBefore( a, button_group.firstChild );
   }
 
   var addWhitespaceToggleButtons = function( querystring ){
