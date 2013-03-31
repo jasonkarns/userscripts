@@ -20,9 +20,9 @@
 
   var objectToQueryString = function( params ){
     var values = [];
-    for( param in params ){
-      var value = ( params[ param ] == null ? '' : params[ param ] );
-      values.push( encodeURIComponent( param ) + '=' + encodeURIComponent( value ) )
+    for( var param in params ){
+      var value = ( params[ param ] === null ? '' : params[ param ] );
+      values.push( encodeURIComponent( param ) + '=' + encodeURIComponent( value ) );
     }
     return values.join( '&' ).replace( /%20/g, '+' );
   };
@@ -49,7 +49,7 @@
     a.appendChild(code);
 
     button_group.insertBefore( a, button_group.firstChild );
-  }
+  };
 
   var addWhitespaceToggleButtons = function( querystring ){
     Array.prototype.forEach.call(
@@ -61,7 +61,7 @@
   };
 
   var invertButtonGradients = function(){
-    var sheet = document.createElement('style')
+    var sheet = document.createElement('style');
     var selector = button_group_selector + ' .' + toggler_classname;
     sheet.innerHTML = selector + "{ background: -moz-linear-gradient(#EAEAEA,#FAFAFA);\
                                     background: -webkit-linear-gradient(#EAEAEA,#FAFAFA);}" +
