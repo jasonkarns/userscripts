@@ -1,19 +1,16 @@
 {
   "name": "GitHub-Diff-Whitespace",
-  "version": "1.2",
-  "description": "",
+  "version": "1.2.0",
   "manifest_version": 2,
-  "content_scripts": [ {
-    "exclude_globs": [  ],
-    "exclude_matches": [  ],
-    "include_globs": [  ],
-    "js": [ "github-diff-whitespace.js" ],
-    "matches": [
-      "https://github.com/*/commit/*",
-      "https://github.com/*/compare/*",
-      "https://github.com/*/pull/*"
-    ],
-    "run_at": "document_idle"
-  } ]
-}
 
+  "description": "Adds a button to GitHub diff views which toggles whitespace (a la `git diff --ignore-all-space`)",
+  "icons": { "128" : "icon.png" },
+
+  "content_scripts": [ {
+    "js": [ "github-diff-whitespace.js" ],
+    "matches": [ "https://github.com/*/commit/*",
+                 "https://github.com/*/compare/*",
+                 "https://github.com/*/pull/*" ]
+    }
+  ]
+}
