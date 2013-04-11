@@ -1,0 +1,19 @@
+{
+  "name": "userscripts",
+  "version": "0.0.0",
+  "author": "Jason Karns",
+  "description": "Userscripts for Firefox (with Greasemonkey) and Chrome",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jasonkarns/userscripts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jasonkarns/userscripts/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-compress": "~0.4.9",
+    "underscore": "~1.4.4"
+  }
+}
