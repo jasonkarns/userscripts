@@ -1,13 +1,3 @@
-// ==UserScript==
-// @name        GitHub-Diff-Whitespace
-// @namespace   http://jason.karns.name
-// @match       https://github.com/*/commit/*
-// @match       https://github.com/*/compare/*
-// @match       https://github.com/*/pull/*
-// @version     1
-// ==/UserScript==
-
-
 ( function( querystring ){
   var querystringToObject = function( querystring ){
     var params = {};

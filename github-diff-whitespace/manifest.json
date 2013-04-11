@@ -7,7 +7,7 @@
     "exclude_globs": [  ],
     "exclude_matches": [  ],
     "include_globs": [  ],
-    "js": [ "script.js" ],
+    "js": [ "github-diff-whitespace.js" ],
     "matches": [
       "https://github.com/*/commit/*",
       "https://github.com/*/compare/*",
