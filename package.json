@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-compress": "~0.4.9"
+    "grunt-contrib-compress": "~0.4.9",
+    "grunt-contrib-jshint": "~0.4.3"
   }
 }
