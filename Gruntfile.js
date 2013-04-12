@@ -11,9 +11,9 @@ module.exports = function(grunt) {
     manifest: manifest,
 
     compress: {
-      extension: {
+      main: {
         options: {
-          archive: "<%= manifest.name.toLowerCase().replace(/\\s/g,'_') %>-<%= manifest.version %>.zip"
+          archive: _.sprintf("%s-%s.zip", manifest.name.toLowerCase().replace(/\\s/g,'_'), manifest.version)
         } ,
         files: [ {src: 'manifest.json'}, {src: icons}, {src: js}, {src: css} ]
       }
