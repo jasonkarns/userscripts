@@ -37,6 +37,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-jshint');
 
-  grunt.registerTask('package', "Build the Chrome Web Store package archive.", ['compress']);
-  grunt.registerTask('default', ['package']);
+  grunt.registerTask('default', ['csslint', 'jshint', 'compress']);
 };
