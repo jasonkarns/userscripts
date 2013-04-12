@@ -13,7 +13,6 @@
   },
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-compress": "~0.4.9",
-    "underscore": "~1.4.4"
+    "grunt-contrib-compress": "~0.4.9"
   }
 }

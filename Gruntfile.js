@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-  _ = require("underscore");
+  _ = grunt.util._;
 
   manifest = grunt.file.readJSON('manifest.json');
   icons    = _.map(manifest.icons, function(icon){ return icon });
