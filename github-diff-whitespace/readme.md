@@ -18,7 +18,8 @@ Effect of toggling whitespace significance:
 
 Installation
 ------------
-[Install from the script page at userscripts.org](http://userscripts.org/scripts/show/137968) or simply [browse the raw script source on github](https://github.com/jasonkarns/userscripts/raw/master/github-diff-whitespace/github-diff-whitespace.user.js).
+[Install from the script page at userscripts.org](http://userscripts.org/scripts/show/137968) or simply [browse the raw script source on github](https://github.com/jasonkarns/userscripts/raw/master/github-diff-whitespace/dist/github-diff-whitespace.user.js).
+Also [available in the Chrome Web Store](https://chrome.google.com/webstore/detail/github-diff-whitespace/lhbcdehjihmbiafeodkfnbndleijnnhp)
 
 Browsers
 ------------

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        GitHub-Diff-Whitespace
 // @namespace   http://jason.karns.name
-// @version     1.2.0
+// @version     1.3.0
 // @match       https://github.com/*/commit/*
 // @match       https://github.com/*/compare/*
 // @match       https://github.com/*/pull/*
