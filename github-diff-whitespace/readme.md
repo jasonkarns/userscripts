@@ -18,10 +18,13 @@ Effect of toggling whitespace significance:
 
 Installation
 ------------
-[Install from the script page at userscripts.org](http://userscripts.org/scripts/show/137968) or simply [browse the raw script source on github](https://github.com/jasonkarns/userscripts/raw/master/github-diff-whitespace/dist/github-diff-whitespace.user.js).
-Also [available in the Chrome Web Store](https://chrome.google.com/webstore/detail/github-diff-whitespace/lhbcdehjihmbiafeodkfnbndleijnnhp)
+Chrome:
+ - install from [Chrome Web Store](https://chrome.google.com/webstore/detail/github-diff-whitespace/lhbcdehjihmbiafeodkfnbndleijnnhp)
+
+Firefox with Greasemonkey:
+ - install from [userscripts.org](http://userscripts.org/scripts/show/137968)
+ - install from [github](https://github.com/jasonkarns/userscripts/raw/master/github-diff-whitespace/dist/github-diff-whitespace.user.js)
 
 Browsers
 ------------
-Works in Firefox (with Greasemonkey) and Google Chrome
-
+Tested in Firefox (with Greasemonkey) and Google Chrome

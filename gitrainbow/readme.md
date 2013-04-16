@@ -9,11 +9,11 @@ Colorize your history! GitRainbow adds color to GitHub's history view by using e
 Installation
 ------------
 Chrome:
- - In the [Chrome Web Store](https://chrome.google.com/webstore/detail/gitrainbow/pofamfblfdipnnhbhkanmdbcmencmkif)
+ - install from [Chrome Web Store](https://chrome.google.com/webstore/detail/gitrainbow/pofamfblfdipnnhbhkanmdbcmencmkif)
 
 Firefox with Greasemonkey:
- - Install [from the script page at userscripts.org](http://userscripts.org/scripts/show/152477)
- - Browse [the raw script source on github](https://github.com/jasonkarns/userscripts/raw/master/gitrainbow/gitrainbow.user.js)
+ - install from [userscripts.org](http://userscripts.org/scripts/show/152477)
+ - install from [github](https://github.com/jasonkarns/userscripts/raw/master/gitrainbow/dist/gitrainbow.user.js)
 
 Browsers
 ------------
