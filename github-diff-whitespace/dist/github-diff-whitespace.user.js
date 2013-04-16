@@ -1,12 +1,11 @@
 // ==UserScript==
 // @name        GitHub-Diff-Whitespace
 // @namespace   http://jason.karns.name
+// @version     1.2.0
 // @match       https://github.com/*/commit/*
 // @match       https://github.com/*/compare/*
 // @match       https://github.com/*/pull/*
-// @version     1
 // ==/UserScript==
-
 
 ( function( querystring ){
   var querystringToObject = function( querystring ){
@@ -63,10 +62,10 @@
   var invertButtonGradients = function(){
     var sheet = document.createElement('style');
     var selector = button_group_selector + ' .' + toggler_classname;
-    sheet.innerHTML = selector + "{ background: -moz-linear-gradient(#EAEAEA,#FAFAFA);\
-                                    background: -webkit-linear-gradient(#EAEAEA,#FAFAFA);}" +
-               selector + ":hover { background: -moz-linear-gradient(#3072B3, #599BDC);\
-                                    background: -webkit-linear-gradient(#3072B3,#599BDC);}";
+    sheet.innerHTML = selector + "{ background: -moz-linear-gradient(#EAEAEA,#FAFAFA);" +
+                                  " background: -webkit-linear-gradient(#EAEAEA,#FAFAFA);}" +
+               selector + ":hover { background: -moz-linear-gradient(#3072B3, #599BDC);" +
+                                  " background: -webkit-linear-gradient(#3072B3,#599BDC);}";
     document.body.appendChild(sheet);
   };
 
