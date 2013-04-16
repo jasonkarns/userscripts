@@ -2,24 +2,25 @@
 // @name        GitRainbow
 // @namespace   http://jason.karns.name
 // @match       https://github.com/*
-// @require     https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js
 // @version     1.3
 // @grant       none
 // ==/UserScript==
 
-jQuery(".commit-group-item").each(function() {
-  var sha = $(this).find(".sha");
-  var color = sha.text().match(/.{6}/)[0];
+Array.prototype.forEach.call(document.getElementsByClassName('commit-group-item'), function(commit) {
+  var sha = commit.getElementsByClassName('sha')[0];
+  var color = sha.textContent.match(/.{6}/)[0];
 
-  $(sha).parent().css('position', 'relative');
-  $(sha).after("<span>").next().css({
-    'background-color': "#" + color,
-    "position": "absolute",
-    "top": 0,
-    "left": 0,
-    "width": "100%",
-    "height": "100%",
-    "border-radius": 2,
-    "opacity": 0.4
-  });
+  sha.parentElement.style.position = 'relative';
+
+  var mask = document.createElement('span');
+    mask.style.backgroundColor = "#" + color;
+    mask.style.position = "absolute";
+    mask.style.top = 0;
+    mask.style.left = 0;
+    mask.style.width = "100%";
+    mask.style.height = "100%";
+    mask.style.borderRadius = 2;
+    mask.style.opacity = 0.4;
+
+  sha.parentElement.appendChild(mask);
 });
