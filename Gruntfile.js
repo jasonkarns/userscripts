@@ -28,6 +28,8 @@ module.exports = function(grunt) {
                   "// @name        <%= manifest.name %>\n" +
                   "// @namespace   http://jason.karns.name\n" +
                   "// @version     <%= manifest.version %>\n" +
+                  "// @grant       none\n" +
+                  "// @description <%= manifest.description %>\n" +
                   "<% _.forEach(manifest.matches, function(match) { %>" +
                   "// @match       <%= match %>\n" +
                   "<% }); %>" +
