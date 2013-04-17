@@ -1,0 +1,12 @@
+{
+  "name": "GitJasmine",
+  "version": "0.4.0",
+  "manifest_version": 2,
+
+  "description": "Easily open a GitHub gist with TryJasmine.",
+
+  "content_scripts": [ {
+    "js": [ "gitjasmine.js" ],
+    "matches": [ "https://gist.github.com/*" ]
+  } ]
+}
