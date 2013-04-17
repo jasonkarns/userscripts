@@ -1,15 +1,21 @@
 Userscripts
 ===========
-Userscripts for Firefox (with Greasemonkey) and Chrome. They are also [available at userscripts.org](http://userscripts.org/users/jasonkarns)
+Userscripts for Firefox (with Greasemonkey) and Chrome. They are [available at userscripts.org](http://userscripts.org/users/jasonkarns/scripts) and [in the Chrome Web Store](https://chrome.google.com/webstore/search/jasonkarns)
 
-- [GitHub-Diff-Whitespace](https://github.com/jasonkarns/userscripts/tree/master/github-diff-whitespace): adds a button to GitHub diff views (commits, pull requests) to toggle whitespace-significance for the diff.
-- [gitJasmine](https://github.com/jasonkarns/userscripts/tree/master/gitjasmine): adds a 'Try-Jasmine' link to gists that look like they include Jasmine specs. Supports both JavaScript and CoffeeScript.
-- [gitRainbow](https://github.com/jasonkarns/userscripts/tree/master/gitrainbow): Colorize your history! GitRainbow adds color to GitHub's history view by using each commit's sha-hash as a hex color
-- [Instasubmit](https://github.com/jasonkarns/userscripts/tree/master/instasubmit): auto-submits the Instapaper Add form when loaded via Google Reader's Send To Instapaper action
-- [Radpaper](https://github.com/jasonkarns/userscripts/tree/master/radpaper): adds 'Radbox' links to articles in your Instapaper queue
-- [TreasuryDirect Login](https://github.com/jasonkarns/userscripts/tree/master/treasurydirect_login): makes the password field editable so that you can use the keyboard to log in
-- [TryJasmine-widescreen](https://github.com/jasonkarns/userscripts/tree/master/tryjasmine-widescreen): make use of your widescreen on [TryJasmine.com](http://tryjasmine.com)
+- [GitHub-Diff-Whitespace](https://github.com/jasonkarns/userscripts/tree/master/github-diff-whitespace): Easily toggle whitespace in GitHub diff views
 
-Obsolete:
+- [GitJasmine](https://github.com/jasonkarns/userscripts/tree/master/gitjasmine): Open gists with Try-Jasmine
 
-- [Tweetapaper](https://github.com/jasonkarns/userscripts/tree/master/tweetapaper): <strike>adds 'Tweet' links to articles in your Instapaper queue</strike> Instapaper now has built-in sharing support for Twitter 
+- [GitRainbow](https://github.com/jasonkarns/userscripts/tree/master/gitrainbow): Colorize your GitHub history!
+
+- [Radpaper](https://github.com/jasonkarns/userscripts/tree/master/radpaper): Send items directly to RadBox from your Instapaper queue
+
+- [TryJasmine-Widescreen](https://github.com/jasonkarns/userscripts/tree/master/tryjasmine-widescreen): Utilize every pixel of your widescreen on [TryJasmine.com](http://tryjasmine.com)
+
+Abandoned:
+
+- [Instasubmit](https://github.com/jasonkarns/userscripts/tree/master/instasubmit): <del>auto-add to Instapaper when sent from Google Reader</del> <ins>Google Reader is dead</ins>
+
+- [Tweetapaper](https://github.com/jasonkarns/userscripts/tree/master/tweetapaper): <del>adds 'Tweet' links to articles in your Instapaper queue</del> <ins>Instapaper now has built-in sharing support for Twitter</ins>
+
+- [TreasuryDirect Login](https://github.com/jasonkarns/userscripts/tree/master/treasurydirect_login): Log in with your keyboard, not the mouse
