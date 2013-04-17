@@ -23,7 +23,6 @@ Chrome:
 
 Firefox with Greasemonkey:
  - install from [userscripts.org](http://userscripts.org/scripts/show/137968)
- - install from [github](https://github.com/jasonkarns/userscripts/raw/master/github-diff-whitespace/dist/github-diff-whitespace.user.js)
 
 Browsers
 ------------

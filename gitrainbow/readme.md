@@ -13,7 +13,6 @@ Chrome:
 
 Firefox with Greasemonkey:
  - install from [userscripts.org](http://userscripts.org/scripts/show/152477)
- - install from [github](https://github.com/jasonkarns/userscripts/raw/master/gitrainbow/dist/gitrainbow.user.js)
 
 Browsers
 ------------

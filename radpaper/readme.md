@@ -6,9 +6,12 @@ A userscript which adds 'Radbox' links to articles in your Instapaper queue.
 
 Installation
 ------------
-[Install from the script page at userscripts.org](http://userscripts.org/scripts/show/98864) or simply [browse the raw script source on github](https://github.com/jasonkarns/userscripts/raw/master/radpaper/radapaper.user.js).
+Chrome:
+ - install from [Chrome Web Store](https://chrome.google.com/webstore/detail/radpaper/hkppckeidkfffchbnnlahiimkpjinepf)
 
-Requirements
+Firefox with Greasemonkey:
+ - install from [userscripts.org](http://userscripts.org/scripts/show/98864)
+
+Browsers
 ------------
-Firefox with [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/748)
-
+Tested in Firefox (with Greasemonkey) and Google Chrome
