@@ -1,0 +1,15 @@
+{
+  "name": "Radpaper",
+  "version": "1.1.0",
+  "manifest_version": 2,
+
+  "description": "Add a 'Radbox' action for sending Instapaper items to Radbox",
+
+  "content_scripts": [ {
+    "js": [ "radpaper.js" ],
+    "matches": [
+      "http://www.instapaper.com/*",
+      "https://www.instapaper.com/*"
+    ]
+  } ]
+}
