@@ -2,7 +2,7 @@ Radpaper
 =========
 A userscript which adds 'Radbox' links to articles in your Instapaper queue.
 
-![preview](https://github.com/jasonkarns/userscripts/raw/master/radpaper/preview.png)
+![preview](preview.png)
 
 Installation
 ------------

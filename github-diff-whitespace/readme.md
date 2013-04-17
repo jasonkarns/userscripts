@@ -6,14 +6,13 @@ GitHub has a hidden feature whereby adding `?w=1` to the end of any diff url wil
 
 Before and After:
 
-<img src="https://github.com/jasonkarns/userscripts/raw/master/github-diff-whitespace/before-header.png" alt="before screenshot" width="800" />
-<img src="https://github.com/jasonkarns/userscripts/raw/master/github-diff-whitespace/after-header.png" alt="after screenshot" width="800" />
-
+![before screenshot](before-header.png)
+![after screenshot](after-header.png)
 
 Effect of toggling whitespace significance:
 
-<img src="https://github.com/jasonkarns/userscripts/raw/master/github-diff-whitespace/whitespace-significant.png" alt="'whitespace significance on' screenshot" width="400" />
-<img src="https://github.com/jasonkarns/userscripts/raw/master/github-diff-whitespace/whitespace-insignificant.png" alt="'whitespace significance off' screenshot" width="400" />
+<img src="whitespace-significant.png" alt="'whitespace significance on' screenshot" width="50%" />
+<img src="whitespace-insignificant.png" alt="'whitespace significance off' screenshot" width="50%" />
 
 
 Installation

@@ -4,7 +4,7 @@ Tweetapaper
 ===========
 A userscript which adds 'Tweet' links to articles in your Instapaper queue.
 
-![preview](https://github.com/jasonkarns/userscripts/raw/master/tweetapaper/preview.png)
+![preview](preview.png)
 
 Installation
 ------------

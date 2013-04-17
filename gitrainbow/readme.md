@@ -3,8 +3,7 @@ GitRainbow
 
 Colorize your history! GitRainbow adds color to GitHub's history view by using each commit's sha-hash as a hex color.
 
-<img src="https://github.com/jasonkarns/userscripts/raw/master/gitrainbow/screenshot.png" alt="screenshot" width="800" />
-
+![screenshot](screenshot.png)
 
 Installation
 ------------
