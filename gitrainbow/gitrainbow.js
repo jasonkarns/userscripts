@@ -1,5 +1,5 @@
-Array.prototype.forEach.call(document.getElementsByClassName('commit-group-item'), function(commit) {
-  var sha = commit.getElementsByClassName('sha')[0];
+Array.prototype.forEach.call(document.querySelectorAll('.commit-group-item'), function(commit) {
+  var sha = commit.querySelector('.sha');
   var color = sha.textContent.match(/.{6}/)[0];
 
   sha.parentElement.style.position = 'relative';
