@@ -1,4 +1,4 @@
-gitJasmine
+GitJasmine
 ===========
 Adds a Try-Jasmine link to suspected Jasmine-spec gists. Lets you jump over to [tryjasmine.com](http://tryjasmine.com) to run the jasmine specs.
 
@@ -6,10 +6,12 @@ Adds a Try-Jasmine link to suspected Jasmine-spec gists. Lets you jump over to [
 
 Installation
 ------------
-[Install from the script page at userscripts.org](http://userscripts.org/scripts/show/133385) or simply [browse the raw script source on github](https://github.com/jasonkarns/userscripts/raw/master/gitjasmine/gitjasmine.user.js).
+Chrome:
+ - install from [Chrome Web Store](https://chrome.google.com/webstore/detail/gitjasmine/lodacmnkiibigbmecillonidpcanbkdc)
 
-Requirements
+Firefox with Greasemonkey:
+ - install from [userscripts.org](http://userscripts.org/scripts/show/133385)
+
+Browsers
 ------------
-Firefox with [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/748)
-or
-Google Chrome
+Tested in Firefox (with Greasemonkey) and Google Chrome
