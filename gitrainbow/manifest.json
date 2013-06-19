@@ -1,6 +1,6 @@
 {
   "name": "GitRainbow",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "manifest_version": 2,
 
   "description": "Colorize your history! GitRainbow adds color to GitHub's history view by using each commit's sha-hash as a hex color.",
