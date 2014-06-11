@@ -1,0 +1,12 @@
+{
+  "name": "GHWaffle",
+  "version": "0.0.1",
+  "manifest_version": 2,
+
+  "description": "Quick link from GitHub repo to Waffle.io dashboard",
+
+  "content_scripts": [ {
+    "js": [ "ghwaffle.js" ],
+    "matches": [ "https://github.com/*" ]
+  } ]
+}
