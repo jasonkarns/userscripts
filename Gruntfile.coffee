@@ -45,6 +45,14 @@ module.exports = (grunt) ->
       main:
         files: [ src: js ]
 
+    release:
+      options:
+        file: 'manifest.json'
+        tag: false
+        pushTags: false
+        npm: false
+        commitMessage: manifest.name + " release <%= version %>"
+
 
   grunt.loadNpmTasks('grunt-contrib-compress')
   grunt.loadNpmTasks('grunt-contrib-concat')
