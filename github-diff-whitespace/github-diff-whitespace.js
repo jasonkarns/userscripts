@@ -61,7 +61,7 @@
   };
 
 
-  var button_group_selector = '.diff-view .actions .button-group';
+  var button_group_selector = '#files .meta .actions';
   var toggler_classname = 'toggle-whitespace';
   var params = querystringToObject( querystring );
   var whitespace = Boolean(params.w);
