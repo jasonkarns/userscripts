@@ -11,6 +11,8 @@ module.exports = (grunt) ->
   grunt.initConfig
     manifest: manifest
 
+    clean: [ "dist" ]
+
     compress:
       main:
         options:
@@ -54,6 +56,7 @@ module.exports = (grunt) ->
         commitMessage: manifest.name + " release <%= version %>"
 
 
+  grunt.loadNpmTasks('grunt-contrib-clean')
   grunt.loadNpmTasks('grunt-contrib-compress')
   grunt.loadNpmTasks('grunt-contrib-concat')
   grunt.loadNpmTasks('grunt-contrib-csslint')
