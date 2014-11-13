@@ -3,19 +3,10 @@ module.exports = (grunt) ->
 
   manifest         = grunt.file.readJSON 'manifest.json'
   name             = manifest.name.toLowerCase().replace(/\\s/g,'_')
-  icons            = _.map(manifest.icons, (icon) -> icon )
-  js               = _.reduce(
-    manifest.content_scripts,
-    (js, cs) -> js.concat(cs.js || []),
-    [])
-  css              = _.reduce(
-    manifest.content_scripts,
-    (css, cs) -> css.concat(cs.css || []),
-    [])
-  manifest.matches = _.reduce(
-    manifest.content_scripts,
-    (matches, cs) -> matches.concat(cs.matches || []),
-    [])
+  icons            = _(manifest.icons).values()
+  js               = _.chain(manifest.content_scripts).pluck('js').flatten().compact().value()
+  css              = _.chain(manifest.content_scripts).pluck('css').flatten().compact().value()
+  manifest.matches = _.chain(manifest.content_scripts).pluck('matches').flatten().compact().value()
 
   grunt.initConfig
     manifest: manifest
