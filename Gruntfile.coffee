@@ -30,16 +30,19 @@ module.exports = (grunt) ->
       main:
         options:
           process: true
-          banner: "// ==UserScript==\n
-                  // @name        <%= manifest.name %>\n
-                  // @namespace   http://jason.karns.name\n
-                  // @version     <%= manifest.version %>\n
-                  // @grant       none\n
-                  // @description <%= manifest.description %>\n
-                  <% _.forEach(manifest.matches, function(match) { %>
-                  // @match       <%= match %>\n
-                  <% }); %>
-                  // ==/UserScript==\n\n"
+          banner: """
+          // ==UserScript==
+          // @name        <%= manifest.name %>
+          // @namespace   http://jason.karns.name
+          // @version     <%= manifest.version %>
+          // @grant       none
+          // @description <%= manifest.description %>
+          <% manifest.matches.forEach(function(match) {
+          %>// @match       <%= match %>
+          <% }); %>// ==/UserScript==
+
+
+          """
         src: _.last(js)
         dest: _.sprintf("dist/%s.user.js", name)
 
