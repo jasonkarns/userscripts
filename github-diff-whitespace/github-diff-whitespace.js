@@ -34,7 +34,7 @@
     var a = document.createElement( 'a' );
     a.className = button_group.querySelector( 'a' ).className + ' ' + toggler_classname;
     a.href = '?' + querystring;
-    a.title = 'Toggle Whitespace';
+    a.setAttribute( 'aria-label', 'Toggle Whitespace' );
     a.textContent = ' \u2423';
     a.appendChild(code);
 
