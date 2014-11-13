@@ -14,8 +14,9 @@
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-compress": "~0.4.9",
-    "grunt-contrib-concat":   "~0.2.0",
-    "grunt-contrib-csslint":  "~0.1.2",
-    "grunt-contrib-jshint":   "~0.4.3"
+    "grunt-contrib-concat": "~0.2.0",
+    "grunt-contrib-csslint": "~0.1.2",
+    "grunt-contrib-jshint": "~0.4.3",
+    "grunt-release": "~0.7.0"
   }
 }

@@ -1,7 +1,7 @@
 module.exports = (grunt) ->
   _ = grunt.util._
 
-  manifest         = grunt.file.readJSON('manifest.json')
+  manifest         = grunt.file.readJSON 'manifest.json'
   name             = manifest.name.toLowerCase().replace(/\\s/g,'_')
   icons            = _.map(manifest.icons, (icon) -> icon )
   js               = _.reduce(
@@ -17,7 +17,7 @@ module.exports = (grunt) ->
     (matches, cs) -> matches.concat(cs.matches || []),
     [])
 
-  grunt.initConfig(
+  grunt.initConfig
     manifest: manifest
 
     compress:
@@ -54,12 +54,11 @@ module.exports = (grunt) ->
       main:
         files: [ src: js ]
 
-  )
 
   grunt.loadNpmTasks('grunt-contrib-compress')
   grunt.loadNpmTasks('grunt-contrib-concat')
   grunt.loadNpmTasks('grunt-contrib-csslint')
   grunt.loadNpmTasks('grunt-contrib-jshint')
+  grunt.loadNpmTasks('grunt-release')
 
   grunt.registerTask('default', ['jshint', 'csslint', 'concat', 'compress'])
-
