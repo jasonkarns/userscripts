@@ -1,6 +1,6 @@
 {
   "name": "GitHub-Diff-Whitespace",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "manifest_version": 2,
   "description": "Adds a button to GitHub diff views which toggles whitespace (a la `git diff --ignore-all-space`)",
   "icons": {
